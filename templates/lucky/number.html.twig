@@ -1,0 +1,24 @@
+{# templates/lucky/number.html.twig #}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title %}Welcome!{% endblock %}</title>
+		{% block stylesheets %}{% endblock %}
+	</head>
+	<body>
+		{% block body %}
+			{% for label, messages in app.flashes %}
+				{% for message in messages %}
+					<div class="flash-{{ label }}">
+						{{ message }}
+					</div>
+				{% endfor %}
+			{% endfor %}
+
+			<h1>Your lucky number is {{ number }}</h1>
+		{% endblock %}
+		{% block javascripts %}{% endblock %}
+	</body>
+</html>
